@@ -1,0 +1,11 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Secret Santa Name Draw — free tool</title><meta name="description" content="Paste names, draw pairs in your browser — nothing is uploaded.">
+<style>body{font-family:system-ui,sans-serif;max-width:720px;margin:2rem auto;padding:0 1rem;line-height:1.6;color:#222}h1{color:#b3261e}li{margin:.6rem 0;padding:.4rem;border-radius:6px}.hl{background:#fff3c4}.hide span{visibility:hidden}button{background:#b3261e;color:#fff;border:0;padding:.6rem 1rem;border-radius:6px;cursor:pointer}#out{font-weight:bold;margin:1rem 0}footer{margin-top:2rem;font-size:.9rem;color:#666}@media print{button,footer{display:none}}</style></head>
+<body><h1>Secret Santa Name Draw</h1><p>Paste names, draw pairs in your browser — nothing is uploaded.</p><textarea id="in" rows="4" placeholder="Alice, Bob, Carol, Dan"></textarea><br><button id="go">Draw names</button><div id="out"></div>
+<ul id="list">
+<li>Reveal your match with a video from Santa <span>&rarr; <a href="https://aigreetingvideo.com/tools/custom-santa-video">custom Santa video</a></span></li>
+<li>Add a card to the gift <span>&rarr; <a href="https://aigreetingvideo.com/tools/ai-christmas-card-generator">Christmas card generator</a></span></li>
+<li>Group photo for the office party <span>&rarr; <a href="https://aigreetingvideo.com/trends/ai-christmas-photo/ugly-christmas-sweater-photo">ugly sweater group photo</a></span></li>
+</ul>
+<footer>Made with ❤️ for people who like sending greetings. Want it animated with a name? Try <a href="https://aigreetingvideo.com/">AI Greeting Video</a>.</footer>
+<script>document.getElementById('go').onclick=function(){var n=document.getElementById('in').value.split(/[\n,]+/).map(function(s){return s.trim()}).filter(Boolean);if(n.length<2)return;for(var i=n.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=n[i];n[i]=n[j];n[j]=t}document.getElementById('out').textContent=n.map(function(x,i){return x+' → '+n[(i+1)%n.length]}).join('  |  ')};</script></body></html>
